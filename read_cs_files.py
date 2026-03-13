@@ -183,7 +183,8 @@ def read_cs_convert_tob3_daterec(seconds):  # , milliseconds):
 
 
 def read_cs_convert_tob1_daterec(daterec):
-    basedate = _dt.datetime(year = 1989, month = 12, day = 31, hour = 12)
+    #basedate = _dt.datetime(year = 1989, month = 12, day = 31, hour = 12)
+    basedate = _dt.datetime(year = 1990, month = 1, day = 1, hour = 0)
     date = (daterec[0] + daterec[1] / 10 ** 9) / (24 * 3600)
     td = _dt.timedelta(seconds = daterec[0],
                        microseconds = daterec[1] / 10 ** 3)
@@ -484,4 +485,5 @@ def read_cs_tob3(file_obj, meta,
         rec = list(map(list, zip(*rec)))
 
     return rec
+
 
