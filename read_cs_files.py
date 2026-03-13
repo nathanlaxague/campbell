@@ -290,8 +290,8 @@ def read_cs_tob1(file_obj, meta,
                 tdata = fp22float(tdata)
             tempdata.append(tdata)
         data.append(list(tempdata))
-    for i, ii in enumerate(data):
-        data[i] = read_cs_convert_tob1_daterec(ii)
+    # for i, ii in enumerate(data):
+    #    data[i] = read_cs_convert_tob1_daterec(ii)
     if bycol:
         data = list(map(list, zip(*data)))
     return data
@@ -485,5 +485,6 @@ def read_cs_tob3(file_obj, meta,
         rec = list(map(list, zip(*rec)))
 
     return rec
+
 
 
