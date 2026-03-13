@@ -282,6 +282,8 @@ def read_cs_tob1(file_obj, meta,
             nbyte = struct.Struct(ii).size
             if ii == 'L':
                 ii = '>L'
+            if ii == '>L':
+                ii = 'I'
             tdata = struct.unpack_from(ii, file_obj.read(nbyte))[0]
             if ii == '>H':
                 tdata = fp22float(tdata)
@@ -482,3 +484,4 @@ def read_cs_tob3(file_obj, meta,
         rec = list(map(list, zip(*rec)))
 
     return rec
+
